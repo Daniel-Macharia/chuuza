@@ -1,11 +1,9 @@
-package service;
+package com.chirp.chuuza.service;
 
-import DTO.OwnerDTO;
-import model.Owner;
+import com.chirp.chuuza.model.Owner;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import repository.OwnerRepository;
+import com.chirp.chuuza.repository.OwnerRepository;
 
 @Service
 public class OwnerService {

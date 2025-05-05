@@ -1,18 +1,18 @@
 package com.chirp.chuuza;
 
-import DTO.OwnerDTO;
-import model.Owner;
+import com.chirp.chuuza.DTO.OwnerDTO;
+import com.chirp.chuuza.model.Owner;
+import com.chirp.chuuza.service.OwnerService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import repository.OwnerRepository;
-import service.OwnerService;
+import com.chirp.chuuza.repository.OwnerRepository;
 
 @SpringBootTest
 class ChuuzaApplicationTests {
 
 	@Autowired
-	private OwnerRepository ownerRepository;
+	private OwnerService ownerService;
 
 	@Test
 	void contextLoads() {
@@ -31,7 +31,8 @@ class ChuuzaApplicationTests {
 //				.ownerPhone( ownerDTO.getOwnerPhone() )
 //				.build();
 
-		ownerRepository.save( owner );
+		ownerService.addOwner(owner);
+		//ownerRepository.save( owner );
 	}
 
 }
