@@ -6,21 +6,28 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
-@Table(name = "enterprise_owner")
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Data
+@Table(name = "enterprise_owner")
 public class Owner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Long ownerId;
+    @Column(nullable = false)
     private String ownerName;
+    @Column(nullable = false, unique = true)
     private String ownerPhone;
+    @Column( nullable = false, unique = true)
     private String ownerEmail;
 
-
+    @OneToMany(mappedBy = "owner")
+    private List<Enterprise> enterprises;
 
 }

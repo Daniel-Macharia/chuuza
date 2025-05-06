@@ -1,9 +1,9 @@
 package com.chirp.chuuza.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Builder;
+
+import java.util.List;
 
 @Entity
 @Table
@@ -11,9 +11,20 @@ import lombok.Builder;
 public class Product {
 
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private Long productId;
+    @Column( unique = true, nullable = false)
     private String productName;
+    @Column( nullable = false)
     private String productQuantity;
-    private String productPrice;
+    @Column( nullable = false)
+    private double productPrice;
 
+    @ManyToOne
+    @JoinColumn(name = "enterprise_id", nullable = false)
+    private Enterprise enterprise;
+
+    @ManyToOne
+    @JoinColumn( name =  "cartegory_id", nullable = false)
+    private ProductCartegory cartegory;
 }
