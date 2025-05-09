@@ -1,0 +1,132 @@
+<style>
+    .top-bar{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+  
+    .top-bar h1{
+      color: purple;
+    }
+  
+    .top-bar input{
+      font-size: medium;
+      padding: 4px;
+      width: 80vw;
+      text-align: center;
+      border-style: solid;
+      border-width: 1px;
+      border-color: gray;
+      border-radius: 4px;
+    }
+  
+    .top-bar input:active{
+      border-color: purple;
+    }
+    
+    
+    .cart-table
+    {
+      width: 80vw;
+    }
+  
+    .cartegory{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      width: 100%;
+      margin: 8px 0px 8px 0px;
+    }
+  
+    .cartegory td{
+      border-style: none;
+      border-right-style: solid;
+      border-width: 1px;
+      border-color: purple;
+      width: 15%;
+      min-width: max-content;
+      text-align: center;
+      font-style: oblique;
+    }
+  
+    .cartegory td:hover{
+      opacity: 0.8;
+    }
+  
+    .cartegory td:active{
+      opacity: 0.6;
+    }
+  
+    .main-content{
+      background: whitesmoke;
+      border-style: solid;
+      border-radius: 4px;
+      padding: 16px;
+  
+      border-width: 1px;
+      border-color: gray;
+  
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .products-div{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      list-style: none;
+    }
+  
+    .products-div li{
+      min-width: 40%;
+      margin-bottom: 32px;
+    }
+  
+    @media screen and (max-width: 400) {
+      .products-div li{
+        min-width: 80%;
+      }    
+    }
+  
+  
+  </style>
+  
+<main class="main">
+    <div class="top-bar">
+      <h1>
+        Welcome to the market!
+      </h1>
+      <input name="searchBar" placeholder="search shop, cartegory or product" type="text" />
+      <table class="cart-table">
+        <tbody>
+          <tr class="cartegory">
+            <td>grocery</td>
+            <td>cutlery</td>
+            <td>stationery</td>
+            <td>clothes</td>
+            <td>shoes</td>
+            <td style="border-right-style: none;">electronics</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="main-content">
+      <p style="color: purple;">
+        <u>Available Items.</u>
+      </p>
+  
+      <ul class="products-div">
+        <li *ngFor="let product of getProducts()" >
+          <app-product [productItem]="product" ></app-product>
+        </li>
+      </ul>
+  
+    </div>
+  </main>

@@ -1,0 +1,10 @@
+<div class="product">
+    <img src="{{productItem.productImageUrl}}" style="aspect-ratio: 4-3;" alt="{{productItem.productName}}"/>
+    <div>
+        <p>Name: {{productItem.productName}}</p>
+        <p>Quantity: {{productItem.productQuantity}}</p>
+        <p style="color: purple;">Price: <b>ksh {{productItem.productPrice}} </b></p>
+        <p>Shop: {{productItem.productSeller}}</p>
+        <button (click)="router.navigate(['/product', productItem.productId])" >View</button>
+    </div>
+</div>

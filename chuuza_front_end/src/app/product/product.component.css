@@ -1,0 +1,46 @@
+.product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    border-radius: 4px;
+    margin: 8px;
+    padding: 4px;
+    background-color: white;
+}
+
+button{
+    width: 100%;
+    background-color: purple;
+    border-style: solid;
+    border-radius: 1px;
+    border-color: white;
+    font-size: large;
+    text-align: center;
+    color: white;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+button:active{
+    color: purple;
+    background-color: white;
+    border-color: purple;
+}
+
+
+/* @media screen and (max-width:400px) {
+    .product{
+        background-color: green;
+        width: 80vw;
+    }
+} */
+
